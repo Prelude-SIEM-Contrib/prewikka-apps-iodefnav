@@ -1,0 +1,7 @@
+*~
+build
+*.egg-info
+*/templates/*.py
+!__init__.py
+dist
+*.bak

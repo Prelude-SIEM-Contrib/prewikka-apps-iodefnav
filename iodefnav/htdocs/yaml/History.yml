@@ -1,0 +1,18 @@
+---
+name: History
+description: 'The History class is a log of the significant events or actions performed
+  by the involved parties during the course of handling the incident. '
+color: "#00B050"
+aggregates:
+  HistoryItem:
+    name: HistoryItem
+    multiplicity: 1..*
+    type: 
+    description: Entry in the history log of significant events or actions performed
+      by the involved parties.
+attributes:
+  restriction:
+    name: restriction
+    multiplicity: Optional
+    type: ENUM
+    description: This attribute is defined in Section 3.2.

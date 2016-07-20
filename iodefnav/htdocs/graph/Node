@@ -1,0 +1,32 @@
+// Node
+graph {
+	graph [rankdir=LR]
+	node [shape=plaintext]
+		NodeRole [label=<
+        <table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+        <tr>
+            <td BGCOLOR="#182f5f" HREF="/help/iodefnav?iodef_class=NodeRole" TITLE="The NodeRole class describes the intended function performed by a particular host. ">NodeRole</td>
+        </tr>
+        <tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=NodeRole" TITLE="Functionality provided by a node." >[ENUM] category (Required)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=NodeRole" TITLE="A valid language code per RFC 4646 [7] constrained by the definition of &quot;xs:language&quot;.  The interpretation of this code is described in Section 6." >[ENUM] lang (Required)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=NodeRole" TITLE="A means by which to extend the category attribute.  See Section 5.1." >[STRING] ext-category (Optional)</td></tr></table>>]
+			"Node" -- NodeRole [label="0..*" dir=forward]
+		Address [label=<
+        <table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+        <tr>
+            <td BGCOLOR="#182f5f" HREF="/help/iodefnav?iodef_class=Address" TITLE="The Address class represents a hardware (layer-2), network (layer-3), or application (layer-7) address. ">Address</td>
+        </tr>
+        <tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Address" TITLE="The type of address represented.  The permitted values for this attribute are shown below.  The default value is &quot;ipv4-addr&quot;." >[ENUM] category (Required)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Address" TITLE="The name of the Virtual LAN to which the address belongs." >[STRING] vlan-name (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Address" TITLE="A means by which to extend the category attribute.  See Section 5.1." >[STRING] ext-category (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Address" TITLE="The number of the Virtual LAN to which the address belongs." >[STRING] vlan-num (Optional)</td></tr></table>>]
+			"Node" -- Address [label="0..*" dir=forward]
+		Counter [label=<
+        <table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+        <tr>
+            <td BGCOLOR="#993015" HREF="/help/iodefnav?iodef_class=Counter" TITLE="The Counter class summarize multiple occurrences of some event, or conveys counts or rates on various features (e.g., packets, sessions, events). ">Counter</td>
+        </tr>
+        <tr><td BGCOLOR="#FF5024" HREF="/help/iodefnav?iodef_class=Counter" TITLE="If present, the Counter class represents a rate rather than a count over the entire event.  In that case, this attribute specifies the denominator of the rate (where the type attribute specified the nominator).  The possible values of this attribute are defined in Section 3.10.2" >[ENUM] duration (Optional)</td></tr><tr><td BGCOLOR="#FF5024" HREF="/help/iodefnav?iodef_class=Counter" TITLE="Specifies the units of the element content." >[ENUM] type (Required)</td></tr><tr><td BGCOLOR="#FF5024" HREF="/help/iodefnav?iodef_class=Counter" TITLE="A means by which to extend the type attribute. See Section 5.1." >[STRING] ext-type (Optional)</td></tr><tr><td BGCOLOR="#FF5024" HREF="/help/iodefnav?iodef_class=Counter" TITLE="A means by which to extend the duration attribute.  See Section 5.1." >[STRING] ext-duration (Optional)</td></tr></table>>]
+			"Node" -- Counter [label="0..*" dir=forward]
+		"Node" [label=<
+        <table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+        <tr>
+            <td BGCOLOR="#182f5f" HREF="/help/iodefnav?iodef_class=Node" TITLE="The Node class names a system (e.g., PC, router) or network. ">Node</td>
+        </tr>
+        <tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Node" TITLE="A free-from description of the physical location of the equipment." >[ML_STRING] Location (0..1)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Node" TITLE="The name of the Node (e.g., fully qualified domain name).  This information MUST be provided if no Address information is given." >[ML_STRING] NodeName (0..*)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Node" TITLE="A timestamp of when the resolution between the name and address was performed.  This information SHOULD be provided if both an Address and NodeName are specified." >[None] DateTime (0..1)</td></tr></table>>]
+}

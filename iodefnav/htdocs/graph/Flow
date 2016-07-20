@@ -1,0 +1,75 @@
+// Flow
+graph {
+	graph [rankdir=LR]
+	node [shape=plaintext]
+		NodeRole [label=<
+        <table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+        <tr>
+            <td BGCOLOR="#182f5f" HREF="/help/iodefnav?iodef_class=NodeRole" TITLE="The NodeRole class describes the intended function performed by a particular host. ">NodeRole</td>
+        </tr>
+        <tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=NodeRole" TITLE="Functionality provided by a node." >[ENUM] category (Required)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=NodeRole" TITLE="A valid language code per RFC 4646 [7] constrained by the definition of &quot;xs:language&quot;.  The interpretation of this code is described in Section 6." >[ENUM] lang (Required)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=NodeRole" TITLE="A means by which to extend the category attribute.  See Section 5.1." >[STRING] ext-category (Optional)</td></tr></table>>]
+			"Node" -- NodeRole [label="0..*" dir=forward]
+		Address [label=<
+        <table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+        <tr>
+            <td BGCOLOR="#182f5f" HREF="/help/iodefnav?iodef_class=Address" TITLE="The Address class represents a hardware (layer-2), network (layer-3), or application (layer-7) address. ">Address</td>
+        </tr>
+        <tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Address" TITLE="The type of address represented.  The permitted values for this attribute are shown below.  The default value is &quot;ipv4-addr&quot;." >[ENUM] category (Required)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Address" TITLE="The name of the Virtual LAN to which the address belongs." >[STRING] vlan-name (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Address" TITLE="A means by which to extend the category attribute.  See Section 5.1." >[STRING] ext-category (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Address" TITLE="The number of the Virtual LAN to which the address belongs." >[STRING] vlan-num (Optional)</td></tr></table>>]
+			"Node" -- Address [label="0..*" dir=forward]
+		Counter [label=<
+        <table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+        <tr>
+            <td BGCOLOR="#993015" HREF="/help/iodefnav?iodef_class=Counter" TITLE="The Counter class summarize multiple occurrences of some event, or conveys counts or rates on various features (e.g., packets, sessions, events). ">Counter</td>
+        </tr>
+        <tr><td BGCOLOR="#FF5024" HREF="/help/iodefnav?iodef_class=Counter" TITLE="If present, the Counter class represents a rate rather than a count over the entire event.  In that case, this attribute specifies the denominator of the rate (where the type attribute specified the nominator).  The possible values of this attribute are defined in Section 3.10.2" >[ENUM] duration (Optional)</td></tr><tr><td BGCOLOR="#FF5024" HREF="/help/iodefnav?iodef_class=Counter" TITLE="Specifies the units of the element content." >[ENUM] type (Required)</td></tr><tr><td BGCOLOR="#FF5024" HREF="/help/iodefnav?iodef_class=Counter" TITLE="A means by which to extend the type attribute. See Section 5.1." >[STRING] ext-type (Optional)</td></tr><tr><td BGCOLOR="#FF5024" HREF="/help/iodefnav?iodef_class=Counter" TITLE="A means by which to extend the duration attribute.  See Section 5.1." >[STRING] ext-duration (Optional)</td></tr></table>>]
+			"Node" -- Counter [label="0..*" dir=forward]
+		"Node" [label=<
+        <table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+        <tr>
+            <td BGCOLOR="#182f5f" HREF="/help/iodefnav?iodef_class=Node" TITLE="The Node class names a system (e.g., PC, router) or network. ">Node</td>
+        </tr>
+        <tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Node" TITLE="A free-from description of the physical location of the equipment." >[ML_STRING] Location (0..1)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Node" TITLE="The name of the Node (e.g., fully qualified domain name).  This information MUST be provided if no Address information is given." >[ML_STRING] NodeName (0..*)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Node" TITLE="A timestamp of when the resolution between the name and address was performed.  This information SHOULD be provided if both an Address and NodeName are specified." >[None] DateTime (0..1)</td></tr></table>>]
+			System -- "Node" [label="1..1" dir=forward]
+		AdditionalData [label=<
+        <table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+        <tr>
+            <td BGCOLOR="#997a3d" HREF="/help/iodefnav?iodef_class=AdditionalData" TITLE="The AdditionalData class serves as an extension mechanism for information not otherwise represented in the data model.  For relatively simple information, atomic data types (e.g., integers, strings) are provided with a mechanism to annotate their meaning. The class can also be used to extend the data model (and the associated Schema) to support proprietary extensions by encapsulating entire XML documents conforming to another Schema (e.g., IDMEF).  A detailed discussion for extending the data model and the schema can be found in Section 5. ">AdditionalData</td>
+        </tr>
+        <tr><td BGCOLOR="#FFCC66" HREF="/help/iodefnav?iodef_class=AdditionalData" TITLE="The data type of the element content.  The permitted values for this attribute are shown below.  The default value is &quot;string&quot;." >[ENUM] dtype (Required)</td></tr><tr><td BGCOLOR="#FFCC66" HREF="/help/iodefnav?iodef_class=AdditionalData" TITLE="A free-form description of the element content." >[STRING] meaning (Optional)</td></tr><tr><td BGCOLOR="#FFCC66" HREF="/help/iodefnav?iodef_class=AdditionalData" TITLE="A means by which to extend the dtype attribute.  See Section 5.1." >[STRING] ext-dtype (Optional)</td></tr><tr><td BGCOLOR="#FFCC66" HREF="/help/iodefnav?iodef_class=AdditionalData" TITLE="An identifier referencing the format and semantics of the element content." >[STRING] formatid (Optional)</td></tr><tr><td BGCOLOR="#FFCC66" HREF="/help/iodefnav?iodef_class=AdditionalData" TITLE="This attribute has been defined in Section 3.2." >[ENUM] restriction (Optional)</td></tr></table>>]
+			System -- AdditionalData [label="0..*" dir=forward]
+		Application [label=<
+        <table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+        <tr>
+            <td BGCOLOR="#182f5f" HREF="/help/iodefnav?iodef_class=Application" TITLE="The Application class describes an application running on a System providing a Service. ">Application</td>
+        </tr>
+        <tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Application" TITLE="A URL describing the application." >[URL] URL (0..1)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Application" TITLE="Version of the software." >[STRING] version (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Application" TITLE="Vendor name of the software." >[STRING] vendor (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Application" TITLE="Name of the software." >[STRING] name (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Application" TITLE="Family of the software." >[STRING] family (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Application" TITLE="An identifier that can be used to reference a particular configuration of this software." >[STRING] configid (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Application" TITLE="An identifier that can be used to reference this software." >[STRING] swid (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Application" TITLE="Patch or service pack level of the software." >[STRING] patch (Optional)</td></tr></table>>]
+			Service -- Application [label="0..*" dir=forward]
+		Service [label=<
+        <table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+        <tr>
+            <td BGCOLOR="#182f5f" HREF="/help/iodefnav?iodef_class=Service" TITLE="The Service class describes a network service of a host or network. The service is identified by specific port or list of ports, along with the application listening on that port. ">Service</td>
+        </tr>
+        <tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Service" TITLE="A layer-4 protocol-specific code field (e.g., ICMP code field)." >[INTEGER] ProtoCode (0..1)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Service" TITLE="A layer-4 protocol specific flag field (e.g., TCP flag field)." >[INTEGER] ProtoFlags (0..1)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Service" TITLE="A list of port numbers formatted according to Section 2.10." >[PORTLIST] Portlist (0..1)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Service" TITLE="A layer-4 protocol specific type field (e.g., ICMP type field)." >[INTEGER] ProtoType (0..1)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Service" TITLE="A port number." >[INTEGER] Port (0..1)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Service" TITLE="The IANA protocol number." >[INTEGER] ip_protocol (Required)</td></tr></table>>]
+			System -- Service [label="0..*" dir=forward]
+			System -- Counter [label="0..*" dir=forward]
+		OperatingSystem [label=<
+        <table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+        <tr>
+            <td BGCOLOR="#182f5f" HREF="/help/iodefnav?iodef_class=OperatingSystem" TITLE="The OperatingSystem class describes the operating system running on a System.  The definition is identical to the Application class (Section 3.17.1). ">OperatingSystem</td>
+        </tr>
+        <tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=OperatingSystem" TITLE="A URL describing the application." >[URL] URL (0..1)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=OperatingSystem" TITLE="Version of the software." >[STRING] version (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=OperatingSystem" TITLE="Vendor name of the software." >[STRING] vendor (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=OperatingSystem" TITLE="Name of the software." >[STRING] name (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=OperatingSystem" TITLE="Family of the software." >[STRING] family (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=OperatingSystem" TITLE="An identifier that can be used to reference a particular configuration of this software." >[STRING] configid (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=OperatingSystem" TITLE="An identifier that can be used to reference this software." >[STRING] swid (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=OperatingSystem" TITLE="Patch or service pack level of the software." >[STRING] patch (Optional)</td></tr></table>>]
+			System -- OperatingSystem [label="0..1" dir=forward]
+		System [label=<
+        <table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+        <tr>
+            <td BGCOLOR="#182f5f" HREF="/help/iodefnav?iodef_class=System" TITLE="The System class describes a system or network involved in an event. The systems or networks represented by this class are categorized according to the role they played in the incident through the category attribute.  The value of this category attribute dictates the semantics of the aggregated classes in the System class.  If the category attribute has a value of &quot;source&quot;, then the aggregated classes denote the machine and service from which the activity is originating.  With a category attribute value of &quot;target&quot; or &quot;intermediary&quot;, then the machine or service is the one targeted in the activity.  A value of &quot;sensor&quot; dictates that this System was part of an instrumentation to monitor the network. ">System</td>
+        </tr>
+        <tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=System" TITLE="A free-form text description of the System." >[ML_STRING] Description (0..*)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=System" TITLE="Classifies the role the host or network played in the incident.  The possible values are:" >[ENUM] category (Required)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=System" TITLE="This attribute is defined in Section 3.2." >[ENUM] restriction (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=System" TITLE="A means by which to extend the category attribute.  See Section 5.1." >[STRING] ext-category (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=System" TITLE="An indication of confidence in whether this System was the true target or attacking host.  The permitted values for this attribute are shown below.  The default value is &quot;unknown&quot;." >[ENUM] spoofed (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=System" TITLE="Specifies the interface on which the event(s) on this System originated.  If the Node class specifies a network rather than a host, this attribute has no meaning." >[STRING] interface (Optional)</td></tr></table>>]
+			Flow -- System [label="1..*" dir=forward]
+		Flow [label=<
+        <table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+        <tr>
+            <td BGCOLOR="#182f5f" HREF="/help/iodefnav?iodef_class=Flow" TITLE="The Flow class groups related the source and target hosts. ">Flow</td>
+        </tr>
+        </table>>]
+}

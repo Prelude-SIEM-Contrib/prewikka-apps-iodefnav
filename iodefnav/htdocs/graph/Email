@@ -1,0 +1,11 @@
+// Email
+graph {
+	graph [rankdir=LR]
+	node [shape=plaintext]
+		Email [label=<
+        <table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+        <tr>
+            <td BGCOLOR="#7a993d" HREF="/help/iodefnav?iodef_class=Email" TITLE="The Email class specifies an email address formatted according to EMAIL data type (Section 2.14). ">Email</td>
+        </tr>
+        <tr><td BGCOLOR="#CCFF66" HREF="/help/iodefnav?iodef_class=Email" TITLE="A free-form description of the element content (e.g., hours of coverage for a given number)." >[ENUM] meaning (Optional)</td></tr></table>>]
+}

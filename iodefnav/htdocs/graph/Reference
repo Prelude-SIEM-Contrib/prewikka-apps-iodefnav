@@ -1,0 +1,11 @@
+// Reference
+graph {
+	graph [rankdir=LR]
+	node [shape=plaintext]
+		Reference [label=<
+        <table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+        <tr>
+            <td BGCOLOR="#5b3d1e" HREF="/help/iodefnav?iodef_class=Reference" TITLE="The Reference class is a reference to a vulnerability, IDS alert, malware sample, advisory, or attack technique.  A reference consists of a name, a URL to this reference, and an optional description. ">Reference</td>
+        </tr>
+        <tr><td BGCOLOR="#996633" HREF="/help/iodefnav?iodef_class=Reference" TITLE="A URL associated with the reference." >[URL] URL (0..*)</td></tr><tr><td BGCOLOR="#996633" HREF="/help/iodefnav?iodef_class=Reference" TITLE="A free-form text description of this reference." >[ML_STRING] Description (0..*)</td></tr><tr><td BGCOLOR="#996633" HREF="/help/iodefnav?iodef_class=Reference" TITLE="Name of the reference." >[ML_STRING] ReferenceName (1..1)</td></tr></table>>]
+}

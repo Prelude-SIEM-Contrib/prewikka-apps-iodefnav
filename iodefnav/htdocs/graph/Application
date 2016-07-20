@@ -1,0 +1,11 @@
+// Application
+graph {
+	graph [rankdir=LR]
+	node [shape=plaintext]
+		Application [label=<
+        <table BORDER="0" CELLBORDER="1" CELLSPACING="0">
+        <tr>
+            <td BGCOLOR="#182f5f" HREF="/help/iodefnav?iodef_class=Application" TITLE="The Application class describes an application running on a System providing a Service. ">Application</td>
+        </tr>
+        <tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Application" TITLE="A URL describing the application." >[URL] URL (0..1)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Application" TITLE="Version of the software." >[STRING] version (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Application" TITLE="Vendor name of the software." >[STRING] vendor (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Application" TITLE="Name of the software." >[STRING] name (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Application" TITLE="Family of the software." >[STRING] family (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Application" TITLE="An identifier that can be used to reference a particular configuration of this software." >[STRING] configid (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Application" TITLE="An identifier that can be used to reference this software." >[STRING] swid (Optional)</td></tr><tr><td BGCOLOR="#284f9f" HREF="/help/iodefnav?iodef_class=Application" TITLE="Patch or service pack level of the software." >[STRING] patch (Optional)</td></tr></table>>]
+}
