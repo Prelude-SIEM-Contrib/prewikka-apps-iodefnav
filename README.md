@@ -1,6 +1,6 @@
 ## IODEF nav plugins
 
-This plugin add pretty UML graph of the IODEF schema. (see [RFC 4765](https://www.ietf.org/rfc/rfc4765.txt))
+This plugin add pretty UML graph of the IODEF schema. (see [RFC 5070](https://www.ietf.org/rfc/rfc5070.txt))
 
 It use graphviz to generate the graphs
 
