@@ -20,7 +20,7 @@ The git repo for Prewikka apps is available on [GitHub](https://github.com/Prelu
 
 Once the source code downloaded:
 
-    cd prewikka-apps-helloworld
+    cd prewikka-apps-iodefnav
     cheetah-compile */templates/*.tmpl
     python setup.py install
 
